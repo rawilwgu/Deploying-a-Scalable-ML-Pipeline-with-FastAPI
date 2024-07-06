@@ -16,10 +16,9 @@ from ml.model import (
 # TODO: load the cencus.csv data
 project_path = "/home/rawilwgu/Deploying-a-Scalable-ML-Pipeline-with-FastAPI"
 data_path = os.path.join(project_path, "data", "census.csv")
-cwd = os.getcwd()  # Get the current working directory (cwd)
-files = os.listdir(cwd)  # Get all the files in that directory
-print("Files in %r: %s" % (cwd, files))
+
 print(f"------- \n Project path: {data_path} \n-------")
+
 data = pd.read_csv(data_path)
 
 # TODO: split the provided data to have a train dataset and a test dataset
@@ -52,7 +51,7 @@ X_test, y_test, _, _ = process_data(
     label="salary",
     training=False,
     encoder=encoder,
-    lb=lb,
+    lb=lb
 )
 
 # TODO: use the train_model function to train the model on the training dataset
@@ -83,13 +82,13 @@ for col in cat_features:
     for slicevalue in sorted(test[col].unique()):
         count = test[test[col] == slicevalue].shape[0]
         p, r, fb = performance_on_categorical_slice(
-            test, 
-            col, 
-            slicevalue, 
-            cat_features, 
-            "salary", 
-            encoder, 
-            lb, 
+            test,
+            col,
+            slicevalue,
+            cat_features,
+            "salary",
+            encoder,
+            lb,
             model
 
         )
