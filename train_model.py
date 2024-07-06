@@ -16,6 +16,9 @@ from ml.model import (
 # TODO: load the cencus.csv data
 project_path = "/home/rawilwgu/Deploying-a-Scalable-ML-Pipeline-with-FastAPI"
 data_path = os.path.join(project_path, "data", "census.csv")
+cwd = os.getcwd()  # Get the current working directory (cwd)
+files = os.listdir(cwd)  # Get all the files in that directory
+print("Files in %r: %s" % (cwd, files))
 print(f"------- \n Project path: {data_path} \n-------")
 data = pd.read_csv(data_path)
 
