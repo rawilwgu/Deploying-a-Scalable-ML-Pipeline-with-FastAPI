@@ -14,9 +14,9 @@ from ml.model import (
 )
 
 # TODO: load the cencus.csv data
-project_path = "/Users/Rawil/Deploying-a-Scalable-ML-Pipeline-with-FastAPI"
+project_path = "C:/Users/Rawil/Deploying-a-Scalable-ML-Pipeline-with-FastAPI"
 data_path = os.path.join(project_path, "data", "census.csv")
-print(f"------- \n Project path: {data_path} \n -------")
+print(f"------- \n Project path: {data_path} \n-------")
 data = pd.read_csv(data_path)
 
 # TODO: split the provided data to have a train dataset and a test dataset
